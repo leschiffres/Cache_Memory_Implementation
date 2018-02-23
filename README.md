@@ -6,11 +6,14 @@ How to Run the Code:
 The code can be found in the src folder. 
 
 Compile Command : javac *.java
+
 Run Command : java TestCacheSpeed dataFile requestsFile cacheSize
 
 dataFile is a File containing all the entries (like the hard disk) with a specific Key and their content.
-requestsFile is a File containing the requests of the entries, i.e. a sequence of Keys
-cacheSize should be set as an integer corresponding to the actual size of the cache
+
+requestsFile is a File containing the requests of the entries, i.e. a sequence of Keys.
+
+cacheSize should be set as an integer corresponding to the actual size of the cache.
 
 for example : java TestCacheSpeed data-1000.dat  requests-5000.dat 23
 
