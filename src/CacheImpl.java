@@ -42,7 +42,7 @@ public class CacheImpl<K, V> implements Cache<K, V> {
 			while (tmp != null) {
 				if (key.equals(tmp.getObject().getKey())) { 
 					// if the node in the hashtable has the same key with the one we are looking for return its data
-					hits++;
+					
 					/* Since we have a "Cache hit" we need to move the node to the head of the list */
 					list.moveAtFront(tmp);
 					data = tmp.getObject().getValue();
@@ -53,9 +53,14 @@ public class CacheImpl<K, V> implements Cache<K, V> {
 					tmp = tmp.nextHashNode;
 				}
 			}
-		}
+		}			
 		
-		misses++;
+		if(data == null){
+			misses++;
+		}
+		else{
+			hits++;
+		}
 		return data;
 	}
 	
